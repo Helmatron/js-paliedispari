@@ -56,10 +56,54 @@ if (risultato === true) {
 
 // << Pari e Dispari >>
 
-// L’utente sceglie pari o dispari (tramite prompt) e inserisce un numero da 1 a 5.
-// Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione provate a scrivervela voi altrimenti copiatevela da mdn).
-// Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
-// Dichiariamo chi ha vinto.
+// L’utente sceglie pari o dispari (tramite prompt)
+const pariOdispari = prompt('digitare pari o diaspari')
+
+
+if (pariOdispari === 'pari' || pariOdispari === 'dispari') {
+ 
+    // E inserisce un numero da 1 a 5.
+const number = parseInt(prompt('inserire un numero da 1 a 5'))
+    
+
+//VERIFICO il numero inserito dall'utente
+
+if (number >= 1 && number <= 5) {
+    
+    // SE valido inizio il calcolo
+
+    // Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione provate a scrivervela voi altrimenti copiatevela da mdn).
+    const pcNum = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+
+    console.log(pcNum);
+
+    // Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+    const somma = number + pcNum
+    console.log(somma)
+
+    const risultato = isPari(somma)
+
+    function isPari(somma) {
+     if (somma % 2 === 0) {
+        console.log('il numero è pari') 
+     } else {
+        console.log('il numero è dispari')
+     }
+    }
+
+} else {
+    alert('inserire un numero da 1 a 5')
+}
+
+
+} else {
+    alert('digitare "pari" o "dispari"')
+}
+
+
+
+
+// Dichiariamo chi ha vinto. ??????
 
 // << Consigli del giorno >>
 // Scriviamo sempre in italiano i passaggi che vogliamo fare
